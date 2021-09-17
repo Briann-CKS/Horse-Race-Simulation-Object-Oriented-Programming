@@ -2,56 +2,84 @@
 
 #include <iostream>
 #include "race.h"
-#include "horse.cpp"
+#include "horse.h"
 
-Race::h[] = {0, 1, 2, 3, 4, 5};
+const int TrackLength = 15;
+const int DefNum = 5;
 
-
-void Race::Race()
+Race::Race()
 {
-	
-};
+	length = TrackLength;
+}
 
 
-void Race::Race (int length)
+Race::Race (int length)
 {
-	
-	start();
-	
-	
-
-};
+	Race::length = length;
+}
 
 
 void Race::printLane (int horseNum)
 {
-	int j=0;
-	for (int i = 0; i<position; i++)
+	int num = h[horseNum].getPosition();
+	std::cout << "\n\nasdfasdf\n\n";
+	for (int i = 0; i < num; i++)
 	{
-		horseArr[i] = '.';
-		j++;
+		std::cout << ".";
 	}
-
-	horseArr[j] = horseNum;				
-	j++;
-
-	for (int i = 0; i< (15-position-1); i++)
+		
+	std::cout << horseNum;
+		
+	for (int i=0; i < TrackLength-num-1; i++)
 	{
-		horseArr[j] = '.';
-		j++;
+		std::cout << ".";
 	}
-
-	for (int i=0; i<15; i++)
-	{
-		std::cout << horseArr [i];
-	}
-
 	std::cout << std::endl;
+	
+
 }
 
 
 void Race::start()
 {
-	Horse::advance();
-
-};
+	int winner = -1;
+	bool not_end = true;
+	while (not_end)
+	{
+		for (int i = 0; i < DefNum; i++)
+		{
+			h[i].advance();
+			printLane(i);
+			if (h[i].getPosition() == length)
+			{
+				winner = i;
+				//not_end = false;
+				//std::cout << "\n" << std::endl;
+				//std::cout << "Horse " << i << " wins!\n" << std::endl;
+				//break;
+			}
+		}
+		if (winner != -1)
+		{
+			not_end = false;
+			std::cout << "\n" << std::endl;
+			std::cout << "Horse " << winner << " wins!\n" << std::endl;
+		}
+		std::cout << "\n" << std::endl;
+		/*	if (h[i].getPosition() == TrackLength)
+			{
+				not_end = false;
+				std::cout << "Horse " << i << " wins!\n" << std::endl;
+				//break;
+			}
+		
+		}
+		if (not_end) 
+		{
+			for (int i = 0; i < DefNum; i++)
+			{
+				printLane(i);
+			}
+		} */
+	}
+}

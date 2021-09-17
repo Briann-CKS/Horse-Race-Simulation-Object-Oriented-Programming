@@ -2,21 +2,20 @@
 
 #include <iostream>
 #include "race.h"
-#include "race.cpp"
 #include "horse.h"
-#include "horse.cpp"
+#include <time.h> 
+#include <cstdlib>
 
 int main ()
 {
 	int seed;
-	int winner;
-	std::cout << "Please enter a random seed: "
+	std::cout << "Please enter a random seed: " << std::endl;
 	std::cin >> seed;
 	srand (seed);
 	
 	Race race;
 
-	race.Race (seed);
+	race.start();
 
 	return 0;
 }

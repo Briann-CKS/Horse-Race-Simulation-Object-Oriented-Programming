@@ -5,10 +5,13 @@
 #define RACE_H_EXISTS
 
 #include <iostream>
+#include "horse.h"
+
+const int num = 5;
 
 class Race {
 	private:
-		Horse h[];
+		Horse h[num];
 		int length;
 	public:
 		Race();
