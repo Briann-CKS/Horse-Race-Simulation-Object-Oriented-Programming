@@ -26,9 +26,12 @@ void Race::printLane (int horseNum)
 	{
 		std::cout << ".";
 	}
-		
-	std::cout << horseNum;
-		
+	
+	if (num != TrackLength)
+	{		
+		std::cout << horseNum;
+	}
+
 	for (int i=0; i < TrackLength-num-1; i++)
 	{
 		std::cout << ".";
