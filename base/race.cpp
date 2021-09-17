@@ -22,7 +22,6 @@ Race::Race (int length)
 void Race::printLane (int horseNum)
 {
 	int num = h[horseNum].getPosition();
-	std::cout << "\n\nasdfasdf\n\n";
 	for (int i = 0; i < num; i++)
 	{
 		std::cout << ".";
@@ -53,33 +52,14 @@ void Race::start()
 			if (h[i].getPosition() == length)
 			{
 				winner = i;
-				//not_end = false;
-				//std::cout << "\n" << std::endl;
-				//std::cout << "Horse " << i << " wins!\n" << std::endl;
-				//break;
 			}
 		}
 		if (winner != -1)
 		{
 			not_end = false;
 			std::cout << "\n" << std::endl;
-			std::cout << "Horse " << winner << " wins!\n" << std::endl;
+			std::cout << "Horse " << winner << " wins!" << std::endl;
 		}
 		std::cout << "\n" << std::endl;
-		/*	if (h[i].getPosition() == TrackLength)
-			{
-				not_end = false;
-				std::cout << "Horse " << i << " wins!\n" << std::endl;
-				//break;
-			}
-		
-		}
-		if (not_end) 
-		{
-			for (int i = 0; i < DefNum; i++)
-			{
-				printLane(i);
-			}
-		} */
 	}
 }
