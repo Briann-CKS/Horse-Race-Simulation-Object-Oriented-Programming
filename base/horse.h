@@ -5,6 +5,7 @@
 
 #include <iostream>
 
+// Declare Horse class
 class Horse {
 	private:
 		int position;
@@ -12,7 +13,7 @@ class Horse {
 		Horse ();
 		void advance ();
 		int getPosition();
-};
+}; // end Horse class
 
 #endif
 
