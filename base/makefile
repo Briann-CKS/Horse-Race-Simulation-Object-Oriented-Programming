@@ -1,5 +1,5 @@
-final: main.o race.o horse.o
-	g++ main.o race.o horse.o -o final
+horseRace: main.o race.o horse.o
+	g++ main.o race.o horse.o -o horseRace
 
 horse.o: horse.h horse.cpp
 	g++ -c horse.cpp
@@ -12,7 +12,7 @@ main.o: main.cpp race.h horse.h
 
 clean:
 	rm -f *.o
-	rm final
+	rm horseRace
 
-run: final
-	./final
+run: horseRace
+	./horseRace
